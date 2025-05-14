@@ -1,0 +1,33 @@
+{
+  "editor.fontFamily": "MesloLGS NF, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.suggestSelection": "first",
+  "editor.rulers": [80, 120],
+  "editor.minimap.enabled": true,
+  "editor.wordWrap": "on",
+  "editor.renderWhitespace": "all",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "workbench.colorTheme": "GitHub Dark",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.startupEditor": "newUntitledFile",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "[go]": {
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "go.useLanguageServer": true,
+  "go.lintOnSave": "package",
+  "go.formatTool": "goimports",
+  "terminal.integrated.defaultProfile.osx": "zsh"
+} 

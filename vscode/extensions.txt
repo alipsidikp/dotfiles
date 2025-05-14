@@ -1,0 +1,13 @@
+golang.go
+ms-azuretools.vscode-docker
+ms-vscode-remote.remote-containers
+ms-vscode.makefile-tools
+eamodio.gitlens
+streetsidesoftware.code-spell-checker
+github.copilot
+github.github-vscode-theme
+vscode-icons-team.vscode-icons
+redhat.vscode-yaml
+esbenp.prettier-vscode
+dbaeumer.vscode-eslint
+mtxr.sqltools 

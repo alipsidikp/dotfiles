@@ -1,0 +1,70 @@
+# Taps
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "homebrew/cask-fonts"
+tap "homebrew/command-not-found"
+
+# CLI Tools - Basic
+brew "git"
+brew "curl"
+brew "wget"
+brew "mas"
+brew "gnupg"
+brew "pinentry-mac"
+brew "zsh"
+brew "zsh-completions"
+brew "jq"
+brew "yq"
+brew "tree"
+brew "fzf"
+brew "ripgrep"
+brew "fd"
+brew "bat"
+brew "htop"
+brew "tmux"
+brew "direnv"
+brew "neovim"
+
+# Development Tools
+brew "go"
+brew "node"
+brew "python"
+brew "rust"
+brew "docker-compose"
+brew "golang-migrate"
+brew "mkcert"
+brew "shellcheck"
+
+# Kubernetes Tools
+brew "kubectl"
+brew "kubectx"
+brew "helm"
+brew "kustomize"
+brew "k9s"
+brew "kind"
+brew "stern"
+brew "krew"
+
+# Database Related
+brew "postgresql"
+brew "mysql"
+brew "redis"
+
+# Applications
+cask "visual-studio-code"
+cask "docker"
+cask "iterm2"
+cask "google-chrome"
+cask "firefox"
+cask "rectangle"
+cask "postman"
+cask "alfred"
+cask "spotify"
+cask "raycast"
+cask "tableplus"
+
+# Fonts
+cask "font-meslo-lg-nerd-font"
+cask "font-fira-code-nerd-font"
+cask "font-jetbrains-mono-nerd-font" 
