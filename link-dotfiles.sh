@@ -91,6 +91,12 @@ link_dotfiles() {
     symlink_config "$(pwd)/vscode/settings.json" "$vscode_dir/settings.json"
     symlink_config "$(pwd)/vscode/keybindings.json" "$vscode_dir/keybindings.json"
     
+    # Cursor configuration
+    cursor_dir="$HOME/Library/Application Support/Cursor/User"
+    mkdir -p "$cursor_dir"
+    symlink_config "$(pwd)/vscode/settings.json" "$cursor_dir/settings.json"
+    symlink_config "$(pwd)/vscode/keybindings.json" "$cursor_dir/keybindings.json"
+    
     # Additional config files
     for dir in configs/*; do
         if [ -d "$dir" ]; then

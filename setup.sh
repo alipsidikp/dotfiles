@@ -245,6 +245,93 @@ setup_vscode() {
     fi
 }
 
+# Setup Cursor IDE
+setup_cursor() {
+    print_status "Setting up Cursor IDE"
+    
+    if ! command_exists cursor; then
+        print_warning "Cursor not found. Installing via Homebrew..."
+        brew install --cask cursor
+    else
+        print_info "Cursor is already installed"
+    fi
+    
+    # Create Cursor config directory if it doesn't exist
+    CURSOR_CONFIG_DIR="$HOME/Library/Application Support/Cursor/User"
+    mkdir -p "$CURSOR_CONFIG_DIR"
+    
+    # Create or update Cursor settings.json
+    CURSOR_SETTINGS="$CURSOR_CONFIG_DIR/settings.json"
+    if [ ! -f "$CURSOR_SETTINGS" ]; then
+        print_info "Creating Cursor settings.json"
+        cat > "$CURSOR_SETTINGS" << EOF
+{
+    "editor.fontFamily": "JetBrains Mono, MesloLGS NF, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "editor.lineHeight": 1.5,
+    "editor.formatOnSave": true,
+    "editor.suggestSelection": "first",
+    "editor.tabSize": 2,
+    "editor.rulers": [80, 120],
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.startupEditor": "newUntitledFile",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "[go]": {
+        "editor.tabSize": 4,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "go.useLanguageServer": true,
+    "go.lintOnSave": "package",
+    "go.formatTool": "goimports",
+    "ai.experimental.conversationInEditor": true,
+    "ai.experimental.development": true
+}
+EOF
+    else
+        print_info "Cursor settings already exist"
+    fi
+    
+    # Create Cursor keybindings.json
+    CURSOR_KEYBINDINGS="$CURSOR_CONFIG_DIR/keybindings.json"
+    if [ ! -f "$CURSOR_KEYBINDINGS" ]; then
+        print_info "Creating Cursor keybindings.json"
+        cat > "$CURSOR_KEYBINDINGS" << EOF
+[
+  {
+    "key": "cmd+t",
+    "command": "ai.chat.new"
+  },
+  {
+    "key": "cmd+i",
+    "command": "ai.chat.focusInput"
+  },
+  {
+    "key": "cmd+shift+r",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Run"
+  },
+  {
+    "key": "cmd+shift+t",
+    "command": "workbench.action.tasks.test"
+  }
+]
+EOF
+    else
+        print_info "Cursor keybindings already exist"
+    fi
+    
+    print_info "Cursor setup completed"
+}
+
 # Setup Kubernetes tools
 setup_kubernetes() {
     print_status "Setting up Kubernetes tools"
@@ -566,6 +653,7 @@ setup_oh_my_zsh
 setup_git
 setup_gpg
 setup_vscode
+setup_cursor
 setup_go
 setup_kubernetes
 setup_direnv

@@ -24,7 +24,6 @@ brew "bat"
 brew "htop"
 brew "tmux"
 brew "direnv"
-brew "neovim"
 
 # Development Tools
 brew "go"
@@ -52,17 +51,18 @@ brew "mysql"
 brew "redis"
 
 # Applications
-cask "visual-studio-code"
-cask "docker"
-cask "iterm2"
+cask "visual-studio-code"  # Primary code editor
+cask "cursor"              # AI-powered code editor
+cask "docker"              # Docker Desktop
+cask "iterm2"              # Terminal emulator
 cask "google-chrome"
 cask "firefox"
 cask "rectangle"
-cask "postman"
+cask "postman"             # API client
 cask "alfred"
 cask "spotify"
 cask "raycast"
-cask "tableplus"
+cask "tableplus"           # Database management
 
 # Fonts
 cask "font-meslo-lg-nerd-font"
